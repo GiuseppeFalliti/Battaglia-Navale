@@ -1,0 +1,48 @@
+            table {
+            }
+            
+            #board1 {
+                    position: absolute;
+                    left: 100px;
+                    top: 100px;
+            }
+            
+            #board2 {
+                    position: absolute;
+                    right: 200px;
+                    top: 100px;
+            }
+            
+            td {
+                border:1px solid black;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                width: 50px;
+                height: 50px;
+            }
+            
+
+            td.sea {
+                background-image:url('sea.gif');
+            }
+            
+            td.playership {
+                background-image:url('ship.gif');
+            }
+
+            
+            td.computership {
+                /* background-image:url('ship.gif');*/
+                background-image:url('sea.gif');                
+            }
+            
+            td.miss
+            {
+                background-image:url('seafired.gif');                            
+            }
+
+            td.hit
+            {
+                background-image:url('shipfired.gif');            
+            }   
+            
