@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Battaglia Navale</title>
+    <link rel="stylesheet" href="battaglianavale.css">
+
+    <script>
+        function generaNavi() {
+            let i, x, y;
+            let cell;
+
+            for (i = 0; i < 5; i++) {
+                do {
+                    x = Math.floor((Math.random() * 10) + 1);
+                    y = Math.floor((Math.random() * 10) + 1);
+                    cell = document.getElementById("1:" + x + ":" + y);
+                } while (cell.classList.contains("playership")); //finche la cella contiene la classe "playership"
+                cell.className = "playership";
+            }
+
+            for (i = 0; i < 5; i++) {
+                do {
+                    x = Math.floor((Math.random() * 10) + 1);
+                    y = Math.floor((Math.random() * 10) + 1);
+                    cell = document.getElementById("2:" + x + ":" + y);
+                } while (cell.classList.contains("computership")); //finche la cella contiene la classe "computership"
+                cell.className = "computership";
+            }
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <div class="punteggio">
+        <form id="form_punteggio">
+            <label for="punti" id="giocatore">Punteggio Giocatore:0</label>
+            <br>
+            <label for="punti" id="computer">Punteggio Computer:0</label> <br>
+            <input type="button" value="Genera Navi" onclick="resetGioco()">
+
+        </form>
+    </div>
+    <!--tabella player-->
+    <table id="board1">
+        <thead>
+            <tr>
+                <th colspan="10">Player</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td id="1:1:1" class="sea"></td>
+                <td id="1:1:2" class="sea"></td>
+                <td id="1:1:3" class="sea"></td>
+                <td id="1:1:4" class="sea"></td>
+                <td id="1:1:5" class="sea"></td>
+                <td id="1:1:6" class="sea"></td>
+                <td id="1:1:7" class="sea"></td>
+                <td id="1:1:8" class="sea"></td>
+                <td id="1:1:9" class="sea"></td>
+                <td id="1:1:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:2:1" class="sea"></td>
+                <td id="1:2:2" class="sea"></td>
+                <td id="1:2:3" class="sea"></td>
+                <td id="1:2:4" class="sea"></td>
+                <td id="1:2:5" class="sea"></td>
+                <td id="1:2:6" class="sea"></td>
+                <td id="1:2:7" class="sea"></td>
+                <td id="1:2:8" class="sea"></td>
+                <td id="1:2:9" class="sea"></td>
+                <td id="1:2:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:3:1" class="sea"></td>
+                <td id="1:3:2" class="sea"></td>
+                <td id="1:3:3" class="sea"></td>
+                <td id="1:3:4" class="sea"></td>
+                <td id="1:3:5" class="sea"></td>
+                <td id="1:3:6" class="sea"></td>
+                <td id="1:3:7" class="sea"></td>
+                <td id="1:3:8" class="sea"></td>
+                <td id="1:3:9" class="sea"></td>
+                <td id="1:3:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:4:1" class="sea"></td>
+                <td id="1:4:2" class="sea"></td>
+                <td id="1:4:3" class="sea"></td>
+                <td id="1:4:4" class="sea"></td>
+                <td id="1:4:5" class="sea"></td>
+                <td id="1:4:6" class="sea"></td>
+                <td id="1:4:7" class="sea"></td>
+                <td id="1:4:8" class="sea"></td>
+                <td id="1:4:9" class="sea"></td>
+                <td id="1:4:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:5:1" class="sea"></td>
+                <td id="1:5:2" class="sea"></td>
+                <td id="1:5:3" class="sea"></td>
+                <td id="1:5:4" class="sea"></td>
+                <td id="1:5:5" class="sea"></td>
+                <td id="1:5:6" class="sea"></td>
+                <td id="1:5:7" class="sea"></td>
+                <td id="1:5:8" class="sea"></td>
+                <td id="1:5:9" class="sea"></td>
+                <td id="1:5:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:6:1" class="sea"></td>
+                <td id="1:6:2" class="sea"></td>
+                <td id="1:6:3" class="sea"></td>
+                <td id="1:6:4" class="sea"></td>
+                <td id="1:6:5" class="sea"></td>
+                <td id="1:6:6" class="sea"></td>
+                <td id="1:6:7" class="sea"></td>
+                <td id="1:6:8" class="sea"></td>
+                <td id="1:6:9" class="sea"></td>
+                <td id="1:6:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:7:1" class="sea"></td>
+                <td id="1:7:2" class="sea"></td>
+                <td id="1:7:3" class="sea"></td>
+                <td id="1:7:4" class="sea"></td>
+                <td id="1:7:5" class="sea"></td>
+                <td id="1:7:6" class="sea"></td>
+                <td id="1:7:7" class="sea"></td>
+                <td id="1:7:8" class="sea"></td>
+                <td id="1:7:9" class="sea"></td>
+                <td id="1:7:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:8:1" class="sea"></td>
+                <td id="1:8:2" class="sea"></td>
+                <td id="1:8:3" class="sea"></td>
+                <td id="1:8:4" class="sea"></td>
+                <td id="1:8:5" class="sea"></td>
+                <td id="1:8:6" class="sea"></td>
+                <td id="1:8:7" class="sea"></td>
+                <td id="1:8:8" class="sea"></td>
+                <td id="1:8:9" class="sea"></td>
+                <td id="1:8:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:9:1" class="sea"></td>
+                <td id="1:9:2" class="sea"></td>
+                <td id="1:9:3" class="sea"></td>
+                <td id="1:9:4" class="sea"></td>
+                <td id="1:9:5" class="sea"></td>
+                <td id="1:9:6" class="sea"></td>
+                <td id="1:9:7" class="sea"></td>
+                <td id="1:9:8" class="sea"></td>
+                <td id="1:9:9" class="sea"></td>
+                <td id="1:9:10" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="1:10:1" class="sea"></td>
+                <td id="1:10:2" class="sea"></td>
+                <td id="1:10:3" class="sea"></td>
+                <td id="1:10:4" class="sea"></td>
+                <td id="1:10:5" class="sea"></td>
+                <td id="1:10:6" class="sea"></td>
+                <td id="1:10:7" class="sea"></td>
+                <td id="1:10:8" class="sea"></td>
+                <td id="1:10:9" class="sea"></td>
+                <td id="1:10:10" class="sea"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!--tabella computer-->
+    <table id="board2">
+        <thead>
+            <tr>
+                <th colspan="10">Computer</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td id="2:1:1" class="sea"></td>
+                <td id="2:2:1" class="sea"></td>
+                <td id="2:3:1" class="sea"></td>
+                <td id="2:4:1" class="sea"></td>
+                <td id="2:5:1" class="sea"></td>
+                <td id="2:6:1" class="sea"></td>
+                <td id="2:7:1" class="sea"></td>
+                <td id="2:8:1" class="sea"></td>
+                <td id="2:9:1" class="sea"></td>
+                <td id="2:10:1" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:2" class="sea"></td>
+                <td id="2:2:2" class="sea"></td>
+                <td id="2:3:2" class="sea"></td>
+                <td id="2:4:2" class="sea"></td>
+                <td id="2:5:2" class="sea"></td>
+                <td id="2:6:2" class="sea"></td>
+                <td id="2:7:2" class="sea"></td>
+                <td id="2:8:2" class="sea"></td>
+                <td id="2:9:2" class="sea"></td>
+                <td id="2:10:2" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:3" class="sea"></td>
+                <td id="2:2:3" class="sea"></td>
+                <td id="2:3:3" class="sea"></td>
+                <td id="2:4:3" class="sea"></td>
+                <td id="2:5:3" class="sea"></td>
+                <td id="2:6:3" class="sea"></td>
+                <td id="2:7:3" class="sea"></td>
+                <td id="2:8:3" class="sea"></td>
+                <td id="2:9:3" class="sea"></td>
+                <td id="2:10:3" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:4" class="sea"></td>
+                <td id="2:2:4" class="sea"></td>
+                <td id="2:3:4" class="sea"></td>
+                <td id="2:4:4" class="sea"></td>
+                <td id="2:5:4" class="sea"></td>
+                <td id="2:6:4" class="sea"></td>
+                <td id="2:7:4" class="sea"></td>
+                <td id="2:8:4" class="sea"></td>
+                <td id="2:9:4" class="sea"></td>
+                <td id="2:10:4" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:5" class="sea"></td>
+                <td id="2:2:5" class="sea"></td>
+                <td id="2:3:5" class="sea"></td>
+                <td id="2:4:5" class="sea"></td>
+                <td id="2:5:5" class="sea"></td>
+                <td id="2:6:5" class="sea"></td>
+                <td id="2:7:5" class="sea"></td>
+                <td id="2:8:5" class="sea"></td>
+                <td id="2:9:5" class="sea"></td>
+                <td id="2:10:5" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:6" class="sea"></td>
+                <td id="2:2:6" class="sea"></td>
+                <td id="2:3:6" class="sea"></td>
+                <td id="2:4:6" class="sea"></td>
+                <td id="2:5:6" class="sea"></td>
+                <td id="2:6:6" class="sea"></td>
+                <td id="2:7:6" class="sea"></td>
+                <td id="2:8:6" class="sea"></td>
+                <td id="2:9:6" class="sea"></td>
+                <td id="2:10:6" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:7" class="sea"></td>
+                <td id="2:2:7" class="sea"></td>
+                <td id="2:3:7" class="sea"></td>
+                <td id="2:4:7" class="sea"></td>
+                <td id="2:5:7" class="sea"></td>
+                <td id="2:6:7" class="sea"></td>
+                <td id="2:7:7" class="sea"></td>
+                <td id="2:8:7" class="sea"></td>
+                <td id="2:9:7" class="sea"></td>
+                <td id="2:10:7" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:8" class="sea"></td>
+                <td id="2:2:8" class="sea"></td>
+                <td id="2:3:8" class="sea"></td>
+                <td id="2:4:8" class="sea"></td>
+                <td id="2:5:8" class="sea"></td>
+                <td id="2:6:8" class="sea"></td>
+                <td id="2:7:8" class="sea"></td>
+                <td id="2:8:8" class="sea"></td>
+                <td id="2:9:8" class="sea"></td>
+                <td id="2:10:8" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:9" class="sea"></td>
+                <td id="2:2:9" class="sea"></td>
+                <td id="2:3:9" class="sea"></td>
+                <td id="2:4:9" class="sea"></td>
+                <td id="2:5:9" class="sea"></td>
+                <td id="2:6:9" class="sea"></td>
+                <td id="2:7:9" class="sea"></td>
+                <td id="2:8:9" class="sea"></td>
+                <td id="2:9:9" class="sea"></td>
+                <td id="2:10:9" class="sea"></td>
+            </tr>
+            <tr>
+                <td id="2:1:10" class="sea"></td>
+                <td id="2:2:10" class="sea"></td>
+                <td id="2:3:10" class="sea"></td>
+                <td id="2:4:10" class="sea"></td>
+                <td id="2:5:10" class="sea"></td>
+                <td id="2:6:10" class="sea"></td>
+                <td id="2:7:10" class="sea"></td>
+                <td id="2:8:10" class="sea"></td>
+                <td id="2:9:10" class="sea"></td>
+                <td id="2:10:10" class="sea"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <script>
+          let countG = 0;
+          let countC = 0;
+
+        let celle = document.querySelectorAll('.sea'); //array di celle
+
+        function playerMove(cell) {
+            if (cell.classList.contains("computership")) {
+                cell.classList.add("hit");
+                cell.classList.remove("computership");
+
+            }
+            else {
+                cell.classList.add("miss");
+            }
+            controlloVittoria();
+            computerMove();
+
+        }
+
+        function computerMove() {
+            let x, y, cell;
+            do {
+                x = Math.floor((Math.random() * 10) + 1);
+                y = Math.floor((Math.random() * 10) + 1);
+                cell = document.getElementById("1:" + x + ":" + y);
+            } while (cell.classList.contains("hit") || cell.classList.contains("miss")); //finche non trova la cella con la classe "playership"
+
+
+            if (cell.classList.contains("playership")) {
+                cell.classList.add("hit");
+                cell.classList.remove("playership");
+
+            }
+            else {
+                cell.classList.add("miss");
+            }
+            controlloVittoria();
+
+        }
+
+        function controlloVittoria() {
+          
+
+            let playerShip = document.getElementsByClassName("playership");
+            let computerShip = document.getElementsByClassName("computership");
+
+            if (playerShip.length === 0) { //se ha vinto il pc
+                alert("Il computer ha vinto!");
+                countC++;
+                document.getElementById("Computer").innerHTML = "Punteggio Computer:" + countC;
+                resetGioco();
+            } else if (computerShip.length === 0) {
+                alert("Hai vinto!");
+                countG++;
+                document.getElementById("Giocatore").innerHTML = "Punteggio Giocatore:" + countG;
+                resetGioco();
+
+            }
+        }
+        function resetGioco() {
+            let celle = document.querySelectorAll('.sea');
+            celle.forEach(cella => {
+                cella.classList.remove('playership', 'computership', 'hit', 'miss');
+            });
+
+            let playerShip = document.querySelectorAll('.playership');
+            playerShip.forEach(cella => {
+                cella.classList.remove('playership');
+                cella.classList.add("sea");
+            });
+
+            let computerShip = document.querySelectorAll('.computership');
+            computerShip.forEach(cella => {
+                cella.classList.remove('computership');
+                cella.classList.add("sea");
+            });
+
+            let hit = document.querySelectorAll('.hit');
+            hit.forEach(cella => {
+                cella.classList.remove('hit');
+                cella.classList.add("sea");
+            });
+            generaNavi();
+
+
+        }
+
+        celle.forEach(cella => {
+            cella.addEventListener('click', () => {
+                if (!cella.classList.contains('hit') && !cella.classList.contains('miss')) {
+                    playerMove(cella);
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
